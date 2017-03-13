@@ -1,3 +1,74 @@
 header {
+  background-color: yellow;
+  height: 80px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+
+  background-color: blue;
+
+}
+
+.leftside-list,
+.middle-box,
+.rightside-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+
+}
+
+.leftside-list {
+  background-color: white;
+  width: 15%;
+}
+
+.dogs-button {
+  height: 70px;
+}
+
+.middle-box {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  width: 65%;
+}
+
+.photo-space {
+  width: 100%;
+  height: 600px;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.current-photo {
+  display: flex;
+  /*align-self: flex-end;*/
+  width: 90%;
+  height: 90%;
+
+  background-color: pink;
+}
+
+.photo-discription {
+  background-color: pink;
+  width: 100%;
+  height: 100px;
+}
+
+.rightside-box {
+  background-color: white;
+  width: 20%;
 
 }

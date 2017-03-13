@@ -70,5 +70,14 @@ header {
 .rightside-box {
   background-color: white;
   width: 20%;
+  border: none;
 
+}
+
+.next-arrow {
+  font-size: 20px;
+  text-align: right;
+  padding-top: 50px;
+  padding-right: 20px;
+  visibility: hidden;
 }

@@ -24,12 +24,14 @@
 
         <div class="middle-box">
           <div class="photo-space">
-            <div class="current-photo">photo</div>
+            <img class="current-photo"  onclick="getNextItem()">
           </div>
           <div class="photo-discription">discr</div>
         </div>
 
-        <div class="rightside-box"></div>
+        <div class="rightside-box" onmouseover="getArrow()" onmouseout="eraseArrow()">
+          <div class="next-arrow">Next >></div>
+        </div>
 
       </div>
     </div>

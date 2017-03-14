@@ -14,19 +14,53 @@
 
     <div class="content">
       <div class="container">
-        <div class="leftside-list">
-          <button class="dogs-button">Doge</button>
-          <button class="dogs-button">Husky</button>
-          <button class="dogs-button">Doggest</button>
-          <button class="dogs-button">Shiber</button>
-          <button class="dogs-button">Puggerino</button>
-        </div>
+        <ul class="leftside-list">
+          <li><button class="dogs-button" onclick="showDogeInfo()">Doge</button></li>
+          <li><button class="dogs-button">Husky</button></li>
+          <li><button class="dogs-button">Doggest</button></li>
+          <li><button class="dogs-button">Shiber</button></li>
+          <li><button class="dogs-button">Puggerino</button></li>
+          <li><button class="dogs-button">Pupper</button></li>
+          <li><button class="dogs-button">Shoobi</button></li>
+        </ul>
 
         <div class="middle-box">
-          <div class="photo-space">
             <img class="current-photo"  onclick="getNextItem()">
+
+          <div class="photo-discription">
+            <div class="doge-disc">
+              <span class="first-part">
+                Doge is an Internet meme that became popular in 2013. The meme typically consists
+              of a picture of a Shiba Inu accompanied by multicolored text in Comic Sans
+              font in the foreground. The text, representing a kind of internal monologue,
+              is deliberately written in a form of broken English. </span>
+              <span class="show-more" onclick="revealMoreDoge()">Show more...</span><br>
+
+              <span class="second-part">The meme is based on a 2010 photograph, and became popular in late 2013,
+              being named as Know Your Meme's "top meme" of that year. A cryptocurrency
+              based on Doge, the Dogecoin, was launched in December 2013, and the Shiba Inu
+              has been featured on Josh Wise's NASCAR car as part of a sponsorship deal. Doge
+              has also been referenced by members of the United States Congress, a safety video
+              for Delta Air Lines, a Google Easter egg, and the video for the song "Word
+              Crimes" by "Weird Al" Yankovic.</span>
+            </div>
+            <div class="husky-disc"></div>
+            <!-- <div class="doggest-disc">
+              <span class="first-part">Doggest is a slang term for “dog” that is primarily
+                associated with pictures of Shiba Inus (nicknamed “Shibe”) and internal
+                monologue captions on Tumblr. These photos may be photoshopped to change
+                the dog’s face or captioned with interior monologues in Comic Sans font.
+                <span class="show-more" onclick="revealMoreDoggest()">Show more...</span></span>
+
+                <span class="second-part">The use of the misspelled word “doge” to refer
+                  to a dog dates back to June 24th, 2005, when it was mentioned in an episode
+                  of Homestar Runner’s puppet show. In the episode titled “Biz Cas Fri 1”,
+                  Homestar calls Strong Bad his “d-o-g-e” while trying to distract him from his work.</span>
+            </div> -->
+            <div class="shiber-disc"></div>
+            <div class="puggerino-disc"></div>
           </div>
-          <div class="photo-discription">discr</div>
+
         </div>
 
         <div class="rightside-box" onmouseover="getArrow()" onmouseout="eraseArrow()">

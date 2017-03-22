@@ -86,7 +86,7 @@ function showFirstInfo(curNum) { // показать первую часть
   document.getElementById("first-desc-part").innerHTML = fpArray[curNum];
 }
 
-function showInfo(num) { // открывать и закрывать текст
+function showInfo() { // открывать и закрывать текст
   if (document.getElementById("second-desc-part").style.display != "none") {
     document.getElementById("second-desc-part").style.display = "none";
     document.getElementById("reveal-button").innerHTML = "Show more...";

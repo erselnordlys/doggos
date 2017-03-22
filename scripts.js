@@ -15,17 +15,84 @@ function getNextItem() {
   document.getElementsByClassName("current-photo")[0].src = "";
 }
 
-// показываем описание к Doge
 
-function showDogeInfo() {
-  document.getElementsByClassName("photo-discription")[0].style.display = "flex";
-  document.getElementsByClassName("photo-discription")[0].getElementsByClassName("doge-disc")[0].style.display = "flex";
-  document.getElementsByClassName("first-part")[0].style.display = "flex";
+// первая часть текста
 
+var fpDoge = "Doge is an Internet meme that became popular in 2013. The meme typically consists of a picture " +
+"of a Shiba Inu accompanied by multicolored text in Comic Sans font in the foreground.";
+
+var fpHusky = "Husky is a general name for a sled-type of dog used in northern regions, differentiated " +
+"from other sled-dog types bytheir fast pulling style. ";
+
+var fpDoggest = "";
+var fpShiber = "";
+var fpPuggerino = "";
+var fpPupper = "";
+var fpShoobi = "";
+
+var fpArray = [fpDoge, fpHusky, fpDoggest, fpShiber, fpPuggerino, fpPupper, fpShoobi];
+
+
+// вторая часть текста
+
+var spDoge = " The text, representing a " +
+"kind of internal monologue, is deliberately written in a form of broken English. " +
+"The meme is based on a 2010 photograph, and became popular in late 2013, being named as Know Your Meme's \"top meme\" " +
+"of that year. A cryptocurrency based on Doge, the Dogecoin, was launched in December 2013, and the Shiba Inu has " +
+"been featured on Josh Wise's NASCAR car as part of a sponsorship deal. Doge has also been referenced by members " +
+"of the United States Congress, a safety video for Delta Air Lines, a Google Easter egg, and the video for the song " +
+"\"Word Crimes\" by \"Weird Al\" Yankovic.";
+
+var spHusky = " They are an ever-changing cross-breed of the fastest dogs. " +
+"The Alaskan Malamute, by contrast, is \"the largest and most powerful\" sled dog, and was used for heavier loads. " +
+" Huskies are used in sled dog racing. In recent years, companies have been marketing tourist treks with dog sledges " +
+"for adventure travelers in snow regions as well. Huskies are also today kept as pets, and groups work to find new pet " +
+"homes for retired racing and adventure trekking dogs." +
+"Huskies are energetic and athletic. They usually have a thick double coat that can be gray, black, copper red, or white." +
+"Their eyes are typically pale blue, although they may also be brown, green, blue, yellow, or heterochromic. Huskies " +
+"are more prone to some degree of uveitis than most other breeds.";
+
+var spDoggest = "";
+var spShiber = "";
+var spPuggerino = "";
+var spPupper = "";
+var abourShoobi = "";
+
+var spArray = [spDoge, spHusky, spDoggest, spShiber, spPuggerino, spPupper, abourShoobi];
+
+
+// изображения фона
+
+var dogeImage = "url(\"images/doge-full-image.jpg\")";
+var huskyImage = "url(\"images/husky-full-image.jpg\")";
+var doggestImage = "";
+var shiberImage = "";
+var puggerinoImage = "";
+var pupperImage = "";
+var shoobiImage = "";
+
+var currentImageArray = [dogeImage, huskyImage, doggestImage, shiberImage, puggerinoImage, pupperImage, shoobiImage];
+
+// показать или скрыть описания
+var num;
+
+function showFirstInfo(curNum) { // показать первую часть
+  num = curNum;
+  if (document.getElementById("second-desc-part").style.display = "flex") {
+    document.getElementById("second-desc-part").style.display = "none";
+  }
+  document.getElementsByClassName("photo-box")[0].style.backgroundImage = currentImageArray[curNum];
+  document.getElementsByClassName("photo-description")[0].style.display = "flex";
+  document.getElementById("first-desc-part").innerHTML = fpArray[curNum];
 }
 
-function revealMoreDoge() {
-  document.getElementsByClassName("show-more")[0].style.display = "none";
-  document.getElementsByClassName("second-part")[0].style.display = "flex";
-  document.getElementsByClassName("photo-discription")[0].style.height = "240px";
+function showInfo(num) { // открывать и закрывать текст
+  if (document.getElementById("second-desc-part").style.display != "none") {
+    document.getElementById("second-desc-part").style.display = "none";
+    document.getElementById("reveal-button").innerHTML = "Show more...";
+  } else {
+    document.getElementById("second-desc-part").style.display = "flex";
+    document.getElementById("second-desc-part").innerHTML =  spArray[num];
+    document.getElementById("reveal-button").innerHTML = "Show less...";
+  }
 }

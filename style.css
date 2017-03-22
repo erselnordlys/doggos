@@ -58,6 +58,14 @@ header > p {
   background-repeat: no-repeat;
   color: #fff;
   text-shadow: 3px 2px 6px #000;
+
+  transition-property: color;
+  transition-duration: 3s;
+}
+
+.dogs-button:hover {
+  color: black;
+
 }
 
 .leftside-list li:nth-child(1) button {
@@ -133,7 +141,7 @@ header > p {
   height: 600px;
 }
 
-.photo-description {
+#photo-description {
   display: none;
   justify-content: flex-start;
   flex-direction: column;
@@ -147,54 +155,48 @@ header > p {
   margin-top: 0px;
   margin-bottom: 0px;
   width: auto;
-  height: auto;
+  max-height: 100px;
+  background: linear-gradient(to top, rgba(48, 48, 48, 0.5) 85%, transparent 100%);
 
   position: absolute;
-  bottom: 0%;
+  bottom: 0px;
+
+  transition: max-height 1s linear;
 }
 
-.photo-description span {
+#photo-description.extended {
+    max-height: 500px;
+
+    transition: max-height 1s linear;
+}
+
+#photo-description span {
   padding: 0px 20px 10px;
-  margin-bottom: -10px;
-  z-index: 2;
+  margin-bottom: 5px;
+  z-index: 3;
+  overflow: hidden;
 }
 
-#first-desc-part {
+#text {
   margin-top: 20px;
 }
 
-#second-desc-part {
-  display: none;
-}
-
 .background-description {
-  display: flex;
   position: absolute;
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.5;
+  background: linear-gradient(to top, #303030 80%, transparent 100%);
+  bottom: 0px;
+  min-height: 100px;
+  max-height: 400px;
 }
 
 a {
   color: #66CDAA;
   text-decoration: none;
-  z-index: 2;
+  z-index: 3;
   padding: 0px 20px 10px;
   margin-top: 0px;
-}
-
-.bd-top {
-  min-height: 15%;
-  max-height: 30px;
-  z-index: 1;
-  background: linear-gradient(to top, #303030, transparent 100%);
-}
-
-.bd-bottom {
-  background-color: #303030;
-  top: 15%;
-  min-height: 85%;
-  max-height: 90%;
-  z-index: 1;
 }
 
 .rightside-box {

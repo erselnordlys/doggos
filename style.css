@@ -17,100 +17,97 @@ header > p {
   color: #bc42f4;
 }
 
-.container {
+#container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: stretch;
+  overflow: scroll;
   width: 100%;
 }
 
-.leftside-list,
-.middle-box,
-.rightside-box {
+#leftside-list,
+#middle-box,
+#rightside-box {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: flex-start;
 }
 
-.leftside-list {
+#leftside-list {
   width: 15%;
   height: 740px;
-  overflow: auto;
+  overflow: scroll;
   white-space: nowrap;
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
 
-  display: flex;
   align-items: stretch;
 }
 
-.dogs-button {
-  height: 120px;
+button {
+  min-height: 120px;
   width: 100%;
 
   font-weight: bold;
   font-size: 20px;
-  background-color: #333;
   background-repeat: no-repeat;
   color: #fff;
   text-shadow: 3px 2px 6px #000;
+  overflow: scroll;
 
-  transition-property: color;
-  transition-duration: 3s;
 }
 
-.dogs-button:hover {
+button:hover {
   color: black;
-
 }
 
-.leftside-list li:nth-child(1) button {
+#doge  {
   background-image: url(images/doge-2.jpg);
   background-position: 50% 35%;
   background-size: 210px 160px;
 }
 
-.leftside-list li:nth-child(2) button {
+#husky  {
   background-image: url(images/husky.jpg);
   background-position: 50% 28%;
   background-size: 310px 300px;
 }
 
-.leftside-list li:nth-child(3) button {
+#doggest  {
   background-image: url(images/doggest.jpg);
   background-position: 50% 20%;
   background-size: 190px 140px;
 }
 
-.leftside-list li:nth-child(4) button {
+#shiber  {
   background-image: url(images/shiber.jpg);
   background-position: 50% 22%;
   background-size: 210px 300px;
 }
 
-.leftside-list li:nth-child(5) button {
+#puggerino  {
   background-image: url(images/puggerino.jpg);
   background-position: 30% 40%;
   background-size: 320px 170px;
 }
 
-.leftside-list li:nth-child(6) button {
+#pupper  {
   background-image: url(images/pupper.jpg);
   background-position: 50% 40%;
   background-size: 210px 230px;
 }
 
-.leftside-list li:nth-child(7) button {
+#shoobi {
   background-image: url(images/shoobi.jpg);
   background-position: 50% 30%;
   background-size: 230px 200px;
 }
 
-.middle-box {
+#middle-box {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -121,10 +118,12 @@ header > p {
   height: auto;
 }
 
-.photo-box {
+#photo-box {
   display: flex;
-  width: 70%;
-  height: 600px;
+  max-width: 80%;
+  min-width: 650px;
+  width: auto;
+  height: auto;
   margin: auto;
   background-size: cover;
   position: relative;
@@ -134,11 +133,13 @@ header > p {
   align-items: center;
 }
 
-.current-photo {
+#current-photo {
   display: flex;
 
-  max-width: 100%;
-  height: 600px;
+  width: 100%;
+  max-height: 100%;
+
+  background-size: cover;
 }
 
 #photo-description {
@@ -181,16 +182,6 @@ header > p {
   margin-top: 20px;
 }
 
-.background-description {
-  position: absolute;
-  width: 100%;
-  opacity: 0.5;
-  background: linear-gradient(to top, #303030 80%, transparent 100%);
-  bottom: 0px;
-  min-height: 100px;
-  max-height: 400px;
-}
-
 a {
   color: #66CDAA;
   text-decoration: none;
@@ -199,13 +190,13 @@ a {
   margin-top: 0px;
 }
 
-.rightside-box {
+#rightside-box {
   background-color: white;
   width: 20%;
   display: none;
 }
 
-.next-arrow {
+#next-arrow {
   font-size: 20px;
   text-align: right;
   padding-top: 50px;

@@ -1,22 +1,4 @@
-
-function getArrow() {
-  document.getElementsByClassName("rightside-box")[0].style.display = "flex";
-  document.getElementsByClassName("rightside-box")[0].style.backgroundColor = "blue";
-  document.getElementsByClassName("next-arrow")[0].style.visibility = "visible";
-}
-
-function eraseArrow() {
-  document.getElementsByClassName("rightside-box")[0].style.backgroundColor = "white";
-  document.getElementsByClassName("next-arrow")[0].style.visibility = "hidden";
-
-}
-
-function getNextItem() {
-  document.getElementsByClassName("current-photo")[0].src = "";
-}
-
-
-// вторая часть текста
+// описания
 
 var textDoge = "Doge is an Internet meme that became popular in 2013. The meme typically consists of a picture " +
 "of a Shiba Inu accompanied by multicolored text in Comic Sans font in the foreground. The text, representing a " +
@@ -46,31 +28,111 @@ var abourShoobi = "";
 var textArray = [textDoge, textHusky, textDoggest, textShiber, textPuggerino, textPupper, abourShoobi];
 
 
-// изображения фона
+var dFP = "images/doge-full-image.jpg"; // первая пикча доге
+var dSP = "images/doge-2.jpg"; //вторая пикча доге
+var dTP = "images/doge-3.jpg"; //третья пикча доге
 
-var dogeImage = "url(\"images/doge-full-image.jpg\")";
-var huskyImage = "url(\"images/husky-full-image.jpg\")";
-var doggestImage = "";
-var shiberImage = "";
-var puggerinoImage = "";
-var pupperImage = "";
-var shoobiImage = "";
+var hFP ="images/husky.jpg";
+var hSP ="images/husky-2.jpg";
+var hTP ="images/husky-3.jpg";
 
-var currentImageArray = [dogeImage, huskyImage, doggestImage, shiberImage, puggerinoImage, pupperImage, shoobiImage];
+
+var dogMap = {
+  "doge": {
+    "id": "doge",
+    "name": "Doge",
+    "picture": dFP,
+    "description": textDoge
+  },
+  "husky": {
+    "id": "husky",
+    "name": "Husky",
+    "picture": hFP,
+    "description": textHusky
+  },
+  "doggest": {
+    "id": "doggest",
+    "name": "Doggest",
+    "picture": " ",
+    "description": " "
+  },
+  "shiber": {
+    "id": "shiber",
+    "name": "Shiber",
+    "picture": " ",
+    "description": " "
+  },
+  "puggerino": {
+    "id": "puggerino",
+    "name": "Puggerino",
+    "picture": " ",
+    "description": " "
+  },
+  "pupper": {
+    "id": "pupper",
+    "name": "Pupper",
+    "picture": " ",
+    "description": " "
+  },
+  "shoobi": {
+    "id": "shoobi",
+    "name": "Shoobi",
+    "picture": " ",
+    "description": " "
+  }
+};
+
+// var way = "";
+
+function countLength() {
+  var length = 0;
+  for (key in dogMap) {
+    length++;
+  }
+  return length;
+}
+
+function listDoggos() {
+  var length = countLength(); // количество ключей в объекте
+  // alert(length);
+
+  var list = document.getElementById("leftside-list");
+  for (var i = 0; i < length; i++) {
+    list.insertAdjacentHTML("beforeEnd", "<button></button>");
+  }
+  var i = 0;
+  for (var key in dogMap) {
+    list.children[i].id = dogMap[key]["id"];
+    list.children[i].innerHTML = dogMap[key]["name"];
+    var way;
+    way = dogMap[key]["picture"]; // тут работает и появляется ссылка
+
+    addListenerToView(list.children[i], key);
+    i++;
+  }
+}
+
+
+
+function addListenerToView(childViewParam, dogCategoryParam) {
+  childViewParam.addEventListener('click', () => {
+  showFirstInfo(dogCategoryParam)
+  });
+}
 
 function changeHeight() {
   document.getElementById("photo-description").classList.toggle("extended");
 }
-
-// показать или скрыть описания
-
-function showFirstInfo(curNum) {
-  document.getElementsByClassName("photo-box")[0].style.backgroundImage = currentImageArray[curNum]; // показать фото
+// при нажатии на кнопку
+function showFirstInfo(url) {
+  // alert(url);
+  document.getElementById("current-photo").src = url; // показать фото
   document.getElementById("photo-description").style.display = "flex"; //  показать блок с описанием
-  document.getElementById("text").innerHTML = textArray[curNum]; // загрузить текст
+  document.getElementById("text").style.display = "flex" ; // загрузить текст
 }
 
-function showInfo() { // открывать и закрывать текст
+// открывать и закрывать текст
+function showInfo() {
   if (document.getElementById("photo-description").className != "extended") { // если текст свернут
     document.getElementById("reveal-button").innerHTML = "Show less..."; // поменять текст на кнопке
   } else {
@@ -78,3 +140,5 @@ function showInfo() { // открывать и закрывать текст
   }
   changeHeight();
 }
+
+function getNextPic() {}

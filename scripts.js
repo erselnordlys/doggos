@@ -150,5 +150,5 @@ function getNextPic() {
   }
   document.getElementById("current-photo").src = dogMap[currentDog]["picture"][dogMap[currentDog]["count"]];
   // dogMap[currentDog]["count"] = count;
-  alert("This dog count: " + dogMap[currentDog]["count"]);
+  // alert("This dog count: " + dogMap[currentDog]["count"]);
 }

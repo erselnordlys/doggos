@@ -32,7 +32,7 @@ var dFP = "images/doge-full-image.jpg"; // первая пикча доге
 var dSP = "images/doge-2.jpg"; //вторая пикча доге
 var dTP = "images/doge-3.jpg"; //третья пикча доге
 
-var hFP ="images/husky.jpg";
+var hFP ="images/husky-1.jpg";
 var hSP ="images/husky-2.jpg";
 var hTP ="images/husky-3.jpg";
 
@@ -112,8 +112,6 @@ function listDoggos() {
   }
 }
 
-
-
 function addListenerToView(childViewParam, dogCategoryParam) {
   childViewParam.addEventListener('click', () => {
   showFirstInfo(dogCategoryParam)
@@ -124,11 +122,11 @@ function changeHeight() {
   document.getElementById("photo-description").classList.toggle("extended");
 }
 // при нажатии на кнопку
-function showFirstInfo(url) {
-  // alert(url);
-  document.getElementById("current-photo").src = url; // показать фото
+function showFirstInfo(key) {
+  alert(key);
+  document.getElementById("current-photo").src = dogMap[key]["picture"]; // показать фото
   document.getElementById("photo-description").style.display = "flex"; //  показать блок с описанием
-  document.getElementById("text").style.display = "flex" ; // загрузить текст
+  document.getElementById("text").innerHTML = dogMap[key]["description"] ; // загрузить текст
 }
 
 // открывать и закрывать текст

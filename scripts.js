@@ -36,19 +36,23 @@ var hFP ="images/husky-1.jpg";
 var hSP ="images/husky-2.jpg";
 var hTP ="images/husky-3.jpg";
 
+var dogeImageArr = [dFP, dSP, dTP];
+var huskyImageArr = [hFP, hSP, hTP];
 
 var dogMap = {
   "doge": {
     "id": "doge",
     "name": "Doge",
-    "picture": dFP,
-    "description": textDoge
+    "picture": dogeImageArr,
+    "description": textDoge,
+    "count": 0
   },
   "husky": {
     "id": "husky",
     "name": "Husky",
-    "picture": hFP,
-    "description": textHusky
+    "picture": huskyImageArr,
+    "description": textHusky,
+    "count": 0
   },
   "doggest": {
     "id": "doggest",
@@ -82,7 +86,7 @@ var dogMap = {
   }
 };
 
-// var way = "";
+var currentDog;
 
 function countLength() {
   var length = 0;
@@ -123,8 +127,8 @@ function changeHeight() {
 }
 // при нажатии на кнопку
 function showFirstInfo(key) {
-  alert(key);
-  document.getElementById("current-photo").src = dogMap[key]["picture"]; // показать фото
+  currentDog = key;
+  document.getElementById("current-photo").src = dogMap[key]["picture"][dogMap[currentDog]["count"]]; // показать фото
   document.getElementById("photo-description").style.display = "flex"; //  показать блок с описанием
   document.getElementById("text").innerHTML = dogMap[key]["description"] ; // загрузить текст
 }
@@ -139,4 +143,12 @@ function showInfo() {
   changeHeight();
 }
 
-function getNextPic() {}
+function getNextPic() {
+  dogMap[currentDog]["count"]++;
+  if (  dogMap[currentDog]["count"] >= dogMap[currentDog]["picture"].length) {
+    dogMap[currentDog]["count"]--;
+  }
+  document.getElementById("current-photo").src = dogMap[currentDog]["picture"][dogMap[currentDog]["count"]];
+  // dogMap[currentDog]["count"] = count;
+  alert("This dog count: " + dogMap[currentDog]["count"]);
+}

@@ -37,7 +37,7 @@ header > p {
 }
 
 #leftside-list {
-  width: 15%;
+  min-width: 200px;
   height: 740px;
   overflow: scroll;
   white-space: nowrap;
@@ -45,66 +45,54 @@ header > p {
   margin-top: 0px;
   margin-bottom: 0px;
 
-  align-items: stretch;
+  /*align-items: stretch;*/
 }
 
-button {
+#leftside-list div {
   min-height: 120px;
   width: 100%;
 
   font-weight: bold;
   font-size: 20px;
+  text-align: center;
   background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   text-shadow: 3px 2px 6px #000;
   overflow: scroll;
 
 }
 
-button:hover {
+#leftside-list div:hover {
   color: black;
 }
 
 #doge  {
-  background-image: url(images/doge.jpg);
   background-position: 45% 20%;
-  background-size: 340px 300px;
 }
 
 #husky  {
-  background-image: url(images/husky.jpg);
   background-position: 80% 20%;
-  background-size: 360px 250px;
 }
 
 #doggest  {
-  background-image: url(images/doggest.jpg);
   background-position: 50% 20%;
-  background-size: 190px 140px;
 }
 
 #shiber  {
-  background-image: url(images/shiber.jpg);
   background-position: 50% 22%;
-  background-size: 210px 300px;
 }
 
 #puggerino  {
-  background-image: url(images/puggerino.jpg);
   background-position: 30% 40%;
-  background-size: 320px 170px;
 }
 
 #pupper  {
-  background-image: url(images/pupper.jpg);
   background-position: 50% 40%;
-  background-size: 210px 230px;
 }
 
 #shoobi {
-  background-image: url(images/shoobi.jpg);
   background-position: 50% 30%;
-  background-size: 230px 200px;
 }
 
 #middle-box {

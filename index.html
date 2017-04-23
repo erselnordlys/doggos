@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset=utf-8 />
+<head>
+    <meta charset=utf-8/>
     <title>doggos at its best</title>
 
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAXRBgjl2vntoQAQd0yY0uoB2_crLcWVD0",
+            authDomain: "doggos-526e8.firebaseapp.com",
+            databaseURL: "https://doggos-526e8.firebaseio.com",
+            projectId: "doggos-526e8",
+            storageBucket: "doggos-526e8.appspot.com",
+            messagingSenderId: "341391627965"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="scripts.js"></script>
+
     <link href="style.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body onload="listDoggos()">
-    <header>
-      <p>my doggos</p>
-    </header>
+<body>
+<header>
+    <p>my doggos</p>
+</header>
 
-    <div id="page-content">
-      <div id="container">
+<div id="page-content">
+    <div id="container">
         <ul id="leftside-list" class="dogs-button">
         </ul>
 
         <div id="middle-box">
             <div id="photo-box">
-              <img id="current-photo"   onclick="getNextPic()">
-              <div id="photo-description">
-                <span id="text"></span>
-                <a id ="reveal-button" onclick="showInfo()" rel="nofollow" href="#">Show more...</a>
-              </div>
+                <img id="current-photo" onclick="getNextPic()">
+                <div id="photo-description">
+                    <span id="text"></span>
+                    <a id="reveal-button" onclick="showInfo()" rel="nofollow" href="#">Show more...</a>
+                </div>
             </div>
         </div>
 
         <div id="rightside-box" onmouseover="getArrow()" onmouseout="eraseArrow()">
-          <div id="next-arrow">Next >></div>
+            <div id="next-arrow">Next >></div>
         </div>
 
-      </div>
     </div>
-
-    <script src="scripts.js"></script>
-  </body>
+</div>
+</body>
 </html>

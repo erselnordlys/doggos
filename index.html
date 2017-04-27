@@ -24,30 +24,26 @@
 </head>
 
 <body>
-<header>
-    <p>my doggos</p>
+<header class="header">
+    <p class="header__title">my doggos</p>
 </header>
 
-<div id="page-content">
-    <div id="container">
-        <ul id="leftside-list" class="dogs-button">
+    <div class="wrapper">
+        <ul id="leftside-list" class="leftside-menu">
         </ul>
 
-        <div id="middle-box">
-            <div id="photo-box">
-                <img id="current-photo" onclick="getNextPic()">
-                <div id="photo-description">
-                    <span id="text"></span>
-                    <a id="reveal-button" onclick="showInfo()" rel="nofollow" href="#">Show more...</a>
+        <div id="middle-box" class="middle-box">
+            <div id="photo-box" class="photo-box middle-box__photo-box">
+                <div id="photo-loader" class="photo-box__photo-loader loader_hidden"></div>
+                <img id="current-photo" class="photo-box__current-photo" onclick="getNextPic()">
+                <div id="photo-description-id" class="photo-box__photo-description photo-box__photo-description_hidden">
+                    <span id="text" class="photo-box__text"></span>
+                    <a id="reveal-button" class="photo-box__reveal-button" onclick="revealText()" rel="nofollow" href="#">Show more...</a>
                 </div>
             </div>
-        </div>
-
-        <div id="rightside-box" onmouseover="getArrow()" onmouseout="eraseArrow()">
-            <div id="next-arrow">Next >></div>
+            <div id="page-loader" class="middle-box__page-loader"></div>
         </div>
 
     </div>
-</div>
 </body>
 </html>

@@ -29,19 +29,25 @@
 </header>
 
     <div class="wrapper">
-        <ul id="leftside-list" class="leftside-menu">
-        </ul>
+        <div id="leftside-list" class="leftside-menu"></div>
 
         <div id="middle-box" class="middle-box">
-            <div id="photo-box" class="photo-box middle-box__photo-box">
+            <div id="photo-box" class="photo-box middle-box__photo-box" onclick="getNextPic()">
                 <div id="photo-loader" class="photo-box__photo-loader loader_hidden"></div>
-                <img id="current-photo" class="photo-box__current-photo" onclick="getNextPic()">
+                <img id="current-photo" class="photo-box__current-photo">
                 <div id="photo-description-id" class="photo-box__photo-description photo-box__photo-description_hidden">
                     <span id="text" class="photo-box__text"></span>
                     <a id="reveal-button" class="photo-box__reveal-button" onclick="revealText()" rel="nofollow" href="#">Show more...</a>
                 </div>
+                <div id="status-bar" class="photo-box__status-bar">
+                    <div class="status-bar__number-of-photo">Photo 1 of 5</div>
+                    <div class="status-bar__action-buttons">Like * Share * Sources</div>
             </div>
             <div id="page-loader" class="middle-box__page-loader"></div>
+
+            <div id="arrow-slider-left" class="middle-box__arrow-slider arrow-slider-left"></div>
+            <div id="arrow-slider-right" class="middle-box__arrow-slider arrow-slider-right"></div>
+
         </div>
 
     </div>

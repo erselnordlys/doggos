@@ -59,6 +59,8 @@ function addListenerToView(childView, i) { // добавить onclick
 
 // выбрать категорию
 function openSelectedDog(i) {
+    document.getElementById("current-photo").src = "";
+
     currentDogIndex = i;
     currentDogId = dogs_array[i].id;
     firebase.database().ref("dogs_photos/" + currentDogId).on('value', onPhotosLoaded, onNetworkError);
@@ -78,8 +80,8 @@ function onPhotosLoaded(snapshot) {
 
 // загрузить фото
 function showPhoto(photo) {
-    document.getElementById("current-photo").src = photo; // показать фото
-
+    document.getElementById("current-photo").src = photo; // загрузить фото
+    document.getElementById("current-photo").classList.remove("photo-box__current-photo_hidden"); // показать фото
 }
 
 // загрузить описание
@@ -108,6 +110,9 @@ function getNextPic() {
 
     displayPhotoLoader();
     document.getElementById("current-photo").src = "";
+
+    // document.getElementById("current-photo").classList.add('add-white');
+    // document.getElementById("current-photo").classList.add('add-white');
 
     var currentDogCount = countMap[currentDogId];
     currentDogCount = (currentDogCount + 1) % dogs_photos.length;

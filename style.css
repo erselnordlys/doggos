@@ -6,17 +6,16 @@ body {
 }
 
 .header {
-  background-color: #faefff;
+  background-color: #242F40;
   height: 80px;
 }
 
 .header__title {
   text-align: center;
   font-size: 50px;
-  padding-bottom: 15px;
-  margin-top: 0px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  color: #bc42f4;
+  margin-top: 0;
+  font-family: "San Francisco", regular, sans-serif;
+  color: #CCA43B;
 }
 
 .wrapper {
@@ -27,6 +26,8 @@ body {
   align-items: stretch;
   overflow: scroll;
   width: 100%;
+
+  background-color: #E5E5E5;
 }
 
 .leftside-menu,
@@ -37,7 +38,7 @@ body {
   align-content: flex-start;
 }
 
-.leftside-menu{
+.leftside-menu {
 
   min-width: 200px;
   height: 740px;
@@ -59,9 +60,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  /*text-shadow: 3px 2px 6px #000;*/
   overflow: scroll;
 
+  /*border-radius: 5%;*/
   transition: text-shadow 0.2s, opacity 0.7s;
 }
 
@@ -76,19 +77,23 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
 
-  background-color: #fff;
+  /*background-color: #fff;*/
   width: 100%;
   height: auto;
+
+  overflow: auto;
 }
 
-.photo-box {
+.middle-box__photo-box {
   display: flex;
-  width: 80%;
-  height: 80%;
-  max-height: 80%;
-  max-width: 80%;
+  width: 85%;
+  height: 87%;
   margin: auto;
+  margin-top: 40px;
+
+
   position: relative;
 
   flex-direction: column;
@@ -96,19 +101,32 @@ body {
   align-items: center;
   justify-content: center;
 
-  /*background-color: darksalmon;*/
+  background-color: #363636;
+  /*border-radius: 0.8%;*/
 }
 
 .photo-box__current-photo {
 
-  display: block;
+  align-self: stretch;
 
-  margin: auto;
-  height: auto;
+  margin: auto auto 0;
+
   width: auto;
+  height: auto;
   max-width: 100%;
-  max-height: 592px;
+  max-height: 594px;
   z-index: 1;
+  /*background-color: cornflowerblue;*/
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  /*border-radius: inherit;*/
+  /*border: 10px solid white;*/
+
+}
+
+.photo-box__current-photo_hidden {
+  display: none;
 }
 
 .photo-box__photo-description {
@@ -168,18 +186,19 @@ body {
   width: 100px;
   height: 100px;
 
-  border: 5px solid lightgrey;
+  border: 5px solid white;
   border-radius: 50%;
-  border-top: 5px solid darkred;
+  border-top: 5px solid #CCA43B;
 
   animation: fff 1s linear infinite;
 }
 
 .middle-box__page-loader {
-  display: block;
+  display: flex;
+  align-self: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /*top: 50%;*/
+  /*left: 50%;*/
   z-index: 6;
   width: 100px;
   height: 100px;
@@ -200,6 +219,29 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+.photo-box__status-bar {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-between;
+
+  /*background: yellowgreen;*/
+  /*border: 1px solid darkgreen;*/
+  height: 50px;
+  min-height: 50px;
+  width: 100%;
+  margin-bottom: 0;
+  /*padding-top: 50px;*/
+  color: #CCA43B;
+}
+
+.status-bar__number-of-photo {
+  padding-left: 20px;
+}
+
+.status-bar__action-buttons {
+  padding-right: 20px;
+}
 
 
 #doge  {

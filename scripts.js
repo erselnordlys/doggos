@@ -5,6 +5,7 @@ var currentDogId;
 
 var dogs_array;
 var dogs_photos;
+var prevDogId;
 
 var countMap = {
     "doge": 0,
@@ -59,13 +60,17 @@ function addListenerToView(childView, i) { // добавить onclick
 
 // выбрать категорию
 function openSelectedDog(i) {
+
+    deactivatePrevCat();
+
     document.getElementById("current-photo").src = "";
 
     currentDogIndex = i;
     currentDogId = dogs_array[i].id;
     firebase.database().ref("dogs_photos/" + currentDogId).on('value', onPhotosLoaded, onNetworkError);
-}
 
+    activateCategoryStyle(currentDogId);
+}
 
 function onPhotosLoaded(snapshot) {
     console.log('onPhotosLoaded');
@@ -76,6 +81,8 @@ function onPhotosLoaded(snapshot) {
     showDesc(dogs_array[currentDogIndex].description);
 
     hidePageLoader();
+
+    setPhotoCounters(countMap[currentDogId], dogs_photos.length);
 }
 
 // загрузить фото
@@ -111,26 +118,60 @@ function getNextPic() {
     displayPhotoLoader();
     document.getElementById("current-photo").src = "";
 
-    // document.getElementById("current-photo").classList.add('add-white');
-    // document.getElementById("current-photo").classList.add('add-white');
-
     var currentDogCount = countMap[currentDogId];
     currentDogCount = (currentDogCount + 1) % dogs_photos.length;
     countMap[currentDogId] = currentDogCount;
 
+
+    setPhotoCounters(countMap[currentDogId], dogs_photos.length);
     document.getElementById("current-photo").src = dogs_photos[currentDogCount];
 }
 
-// показать/скрыть загрузчик
+// открыть предыдущее фото по клику 
+function getPreviousPic() {
+    document.getElementById("current-photo").src = "";
+
+    var currentDogCount = countMap[currentDogId] - 1;
+    if (currentDogCount < 0) {
+        currentDogCount = dogs_photos.length - 1;
+    }
+
+    countMap[currentDogId] = currentDogCount;
+
+    setPhotoCounters(countMap[currentDogId], dogs_photos.length);
+    document.getElementById("current-photo").src = dogs_photos[currentDogCount];
+}
+
+// скрыть загрузчик страницы
 function hidePageLoader() {
         document.getElementById("page-loader").classList.add("loader_hidden");
 }
 
+// отобразить загрузчик фото
 function displayPhotoLoader() {
     document.getElementById("photo-loader").classList.remove("loader_hidden");
 
 }
 
+// затемнить выбранную категорию
+function activateCategoryStyle(curCat) {
+        document.getElementById(curCat).classList.add('leftside-menu__item_active');
+        prevDogId = curCat;
+}
+
+// убрать затемнение с категории
+function deactivatePrevCat() {
+    if (prevDogId !== undefined) {
+        console.log('prev dog: ' + prevDogId);
+
+        document.getElementById(prevDogId).classList.remove("leftside-menu__item_active");
+    }
+}
+
+function setPhotoCounters(curNum, totalNum) {
+    document.getElementById('currentPhotoNumber').innerHTML = curNum + 1;
+    document.getElementById('totalPhotosNumber').innerHTML = totalNum;
+}
 
 function onNetworkError(error) {
     console.log(error);

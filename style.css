@@ -63,12 +63,15 @@ body {
   overflow: scroll;
 
   /*border-radius: 5%;*/
-  transition: text-shadow 0.2s, opacity 0.7s;
+  transition: text-shadow 0.2s, filter 0.7s;
 }
 
-.leftside-menu__item:hover {
+.leftside-menu__item:hover,
+.leftside-menu__item_active {
   text-shadow: 3px 2px 6px #000;
-  opacity: 0.75;
+  box-shadow: 0 0 20px white;
+  filter: brightness(60%);
+
 }
 
 .middle-box {
@@ -109,7 +112,7 @@ body {
 
   align-self: stretch;
 
-  margin: auto auto 0;
+  margin: auto;
 
   width: auto;
   height: auto;
@@ -243,6 +246,52 @@ body {
   padding-right: 20px;
 }
 
+
+.arrow-sliders-box {
+  display: flex;
+  justify-content: flex-start;
+
+
+  position: absolute;
+  top: 80px;
+  left: 200px;
+  /*margin: 0;*/
+  /*padding: 0;*/
+  height: 100%;
+  width: 100%;
+  /*opacity: 0.3;*/
+  /*background-color: indianred;*/
+  z-index: 11;
+}
+
+.middle-box__arrow-slider {
+  position: relative;
+  height: 80%;
+  /*width: 80px;*/
+
+  z-index: 12;
+  /*border: 1px solid green;*/
+  color: black;
+  opacity: 0.5;
+}
+
+.arrow-slider-left {
+  background-color: sandybrown;
+  flex-grow: 1;
+
+}
+
+.arrow-slider-right {
+  background-color: cadetblue;
+  flex-grow: 3;
+
+}
+
+.arrow-slider-rightest {
+  background-color: yellow;
+  flex-grow: 2;
+
+}
 
 #doge  {
   background-position: 45% 20%;

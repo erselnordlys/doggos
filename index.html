@@ -25,7 +25,7 @@
 
 <body>
 <header class="header">
-    <p class="header__title">my doggos</p>
+    <p class="header__title">doggos</p>
 </header>
 
     <div class="wrapper">
@@ -33,6 +33,8 @@
 
         <div id="middle-box" class="middle-box">
             <div id="photo-box" class="photo-box middle-box__photo-box">
+                <div class="photo-box__ar1" id="back-arrow"></div>
+                <div class="photo-box__ar2" id="forw-arrow"></div>
                 <div id="photo-loader" class="photo-box__photo-loader loader_hidden"></div>
                 <img id="current-photo" class="photo-box__current-photo">
                 <div id="photo-description-id" class="photo-box__photo-description photo-box__photo-description_hidden">
@@ -46,10 +48,8 @@
             <div id="page-loader" class="middle-box__page-loader"></div>
         </div>
             <div class="arrow-sliders-box">
-                <div id="arrow-slider-left" class="middle-box__arrow-slider arrow-slider-left" onclick="getPreviousPic()">left</div>
-                <div id="arrow-slider-right" class="middle-box__arrow-slider arrow-slider-right" onclick="getNextPic()">right</div>
-                <div id="arrow-slider-rightest" class="middle-box__arrow-slider arrow-slider-rightest" onclick="getNextPic()">rightest</div>
-
+                <div id="arrow-slider-left" class="middle-box__arrow-slider arrow-slider-left" onclick="getPreviousPic()" onmouseover="highlightArrow('back-arrow')" onmouseout="cancelArrowHighlight('back-arrow')"></div>
+                <div id="arrow-slider-right" class="middle-box__arrow-slider arrow-slider-right" onclick="getNextPic()" onmouseover="highlightArrow('forw-arrow')" onmouseout="cancelArrowHighlight('forw-arrow')"></div>
             </div>
 
     </div>

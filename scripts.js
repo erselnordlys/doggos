@@ -15,16 +15,13 @@ var countMap = {
 window.onload = main;
 
 
-
 function main() {
 
-    console.log('main');
     firebase.database().ref("dogs_array").on('value', onDogsLoaded, onNetworkError);
 }
 
 
 function onDogsLoaded(snapshot) {
-    console.log('onDogsLoaded');
     dogs_array = snapshot.val();
     listDoggos();
 
@@ -45,9 +42,6 @@ function listDoggos() {
 
         addListenerToView(listItem, i);
     }
-
-    console.log("list was created");
-    console.log("add default photo");
 
 }
 
@@ -73,12 +67,11 @@ function openSelectedDog(i) {
 }
 
 function onPhotosLoaded(snapshot) {
-    console.log('onPhotosLoaded');
     dogs_photos = snapshot.val();
     var currentDogCount = countMap[currentDogId];
 
     showPhoto(dogs_photos[currentDogCount]);
-    showDesc(dogs_array[currentDogIndex].description);
+    showDesc(dogs_array[currentDogIndex].description); // временно неактивное действие
 
     hidePageLoader();
 
@@ -162,17 +155,30 @@ function activateCategoryStyle(curCat) {
 // убрать затемнение с категории
 function deactivatePrevCat() {
     if (prevDogId !== undefined) {
-        console.log('prev dog: ' + prevDogId);
-
         document.getElementById(prevDogId).classList.remove("leftside-menu__item_active");
     }
 }
 
+// посчитать текущий номер фото и тотал
 function setPhotoCounters(curNum, totalNum) {
     document.getElementById('currentPhotoNumber').innerHTML = curNum + 1;
     document.getElementById('totalPhotosNumber').innerHTML = totalNum;
 }
 
+// подсветить стрелочку
+function highlightArrow(hoveredArrow) {
+    document.getElementById(hoveredArrow).classList.add('photo-box__arrow_hightlighted');
+}
+
+// убрать подсвечивание стрелочки
+function cancelArrowHighlight(inactiveArrow) {
+    document.getElementById(inactiveArrow).classList.remove('photo-box__arrow_hightlighted');
+
+}
+
+
+
 function onNetworkError(error) {
     console.log(error);
 }
+

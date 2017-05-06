@@ -43,7 +43,19 @@
                 </div>
                 <div id="status-bar" class="photo-box__status-bar">
                     <div class="status-bar__number-of-photo">Photo <span id="currentPhotoNumber"></span> of <span id="totalPhotosNumber"></span></div>
-                    <div class="status-bar__action-buttons">Like * Share * Sources</div>
+                    <div class="status-bar__action-buttons">
+                        <div class="status-bar__action-button action-buttons__like" id="like-button" onmouseenter="showLikeWindow()">
+                            <div class="like__like-window like__like-window_hidden" id="like-window" onmouseleave="hideLikeWindow()">
+                                <div class="like__like-heart" id="like-heart" onclick="changeHeartColor()">
+                                    <div class="like__like-heart_before"></div>
+                                    <div class="like__like-heart_after"></div>
+                                </div>
+                            </div>
+                            Like
+                        </div>
+                        <div class="status-bar__action-button action-buttons__share" id="share-button">Share</div>
+                        <div class="status-bar__action-button action-buttons__sources" id="sources-button">Sources</div>
+                    </div>
             </div>
             <div id="page-loader" class="middle-box__page-loader"></div>
         </div>

@@ -263,6 +263,7 @@ body {
     width: 100%;
     margin-bottom: 0;
     color: #CCA43B;
+    z-index: 16;
 }
 
 .status-bar__number-of-photo {
@@ -270,7 +271,76 @@ body {
 }
 
 .status-bar__action-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding-right: 20px;
+
+}
+
+.status-bar__action-button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.action-buttons__like {
+    position: relative;
+}
+
+.like__like-window {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(245, 245, 245, 0.6);
+    top: -5px;
+    right: 0;
+    margin-top: -100px;
+    z-index: 11;
+
+    border-radius: 60px;
+}
+
+.like__like-window_hidden {
+    display: none;
+}
+
+.like__like-heart {
+    position: absolute;
+    height: 80px;
+    width: 90px;
+    z-index: 15;
+
+    bottom: 15px;
+    right: 0px;
+}
+
+.like__like-heart_before,
+.like__like-heart_after {
+    position: absolute;
+    content: "";
+    left: 40px;
+    bottom: 0;
+    width: 40px;
+    height: 60px;
+    background: rgb(139, 0, 0);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.like__like-heart_after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
+.action-buttons__share {
+
+}
+
+.action-buttons__sources {
+
 }
 
 .arrow-sliders-box {

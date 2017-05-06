@@ -176,7 +176,28 @@ function cancelArrowHighlight(inactiveArrow) {
 
 }
 
+// поменять цвет сердца
+function changeHeartColor() {
 
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        document.getElementsByClassName('like__like-heart_before')[0].style.background = color;
+        document.getElementsByClassName('like__like-heart_after')[0].style.background = color;
+}
+
+// окно с лайком всплывает
+function showLikeWindow() {
+    document.getElementById('like-window').classList.remove('like__like-window_hidden');
+}
+
+// окно с лайком исчезает
+function hideLikeWindow() {
+    document.getElementById('like-window').classList.add('like__like-window_hidden');
+}
 
 function onNetworkError(error) {
     console.log(error);

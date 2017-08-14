@@ -1,2 +1,3 @@
 # doggos
-heres my doggo buddies and youre welcome to meet em
+
+To run the project, download it and run 'index.html'.

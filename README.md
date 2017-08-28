@@ -1,3 +1,3 @@
 # doggos
 
-To run the project, download it and run 'index.html'.
+To run the project go to: doggos-526e8.firebaseapp.com .
